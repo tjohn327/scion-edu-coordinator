@@ -9,11 +9,12 @@
     }
 
     log
-    tls scionlab-admins@sympa.ethz.ch
+    tls internal 
+    #scionlab-admins@sympa.ethz.ch
 }
 
 # Redirect to www. subdomain
-scionlab.org {
-    log
-    redir https://www.scionlab.org{uri} permanent
-}
+#scionlab.org {
+#    log
+#    redir https://www.scionlab.org{uri} permanent
+#}

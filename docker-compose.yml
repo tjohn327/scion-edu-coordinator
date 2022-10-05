@@ -1,11 +1,21 @@
 version: '3'
 
 services:
+  db:
+    image: postgres:latest
+    expose:
+      - "5432"
+    env_file: run/scionlab.env
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
   django:
     build:
       context: .
       dockerfile: deploy/Dockerfile-django
     env_file: run/scionlab.env
+    depends_on:
+      - db
     expose:
       - "8000"
     volumes:
@@ -28,3 +38,4 @@ services:
 volumes:
   web-static:
   caddydata:
+  pgdata:

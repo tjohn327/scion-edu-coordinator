@@ -1,5 +1,6 @@
 run/*
 !run/.gitkeep
+!run/scionlab.env
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
